@@ -1,0 +1,106 @@
+---
+title: Skeleton Loader
+description: A guide in my new Starlight docs site.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+![Hero image for Skeleton Loader](../../../assets/skeleton-loader/sk-loader-hero-banner.png)
+
+The `SkeletonLoaderComponent` is a component used to display a loading state in your application.
+
+## Features
+
+The `SkeletonLoaderComponent` can take on several different states based on the `loadingItem` prop. The state determines the appearance of the skeleton loader.
+
+Here are the possible states:
+
+- 'search': Displays a loading state for a search operation.
+- 'card': Displays a skeleton loader for a card component.
+- 'header': Displays a skeleton loader for a header component.
+- 'list': Displays a skeleton loader for a list component.
+- 'image': Displays a skeleton loader for an image component.
+- 'icon': Displays a skeleton loader for an icon component.
+- default: Displays a generic skeleton loader.
+
+---
+
+### Text Skeleton Loader
+
+![Text Skeleton Loader](../../../assets/skeleton-loader/sk-loader-example-text.svg)
+```typescript
+<shared-skeleton-loader />
+```
+
+### Card Skeleton Loader
+
+![Card Skeleton Loader](../../../assets/skeleton-loader/sk-loader-example-card.svg)
+
+```typescript
+<shared-skeleton-loader [loadingItem]="'card'" />
+```
+
+### Header Skeleton Loader
+
+![Header Skeleton Loader](../../../assets/skeleton-loader/sk-loader-example-header.svg)
+
+```typescript
+<shared-skeleton-loader [loadingItem]="'header'" />
+```
+
+### List Skeleton Loader
+
+![List Skeleton Loader](../../../assets/skeleton-loader/sk-loader-example-list.svg)
+
+```typescript
+<shared-skeleton-loader [loadingItem]="'list'" />
+```
+
+### Image Skeleton Loader
+
+![Image Skeleton Loader](../../../assets/skeleton-loader/sk-loader-example-image.svg)
+
+```typescript
+<shared-skeleton-loader [loadingItem]="'image'" />
+```
+
+
+## Props
+
+The `SkeletonLoaderComponent` accepts the following props:
+
+```ts
+   /**
+    * The `loadingItem` property sets the type of the skeleton loader.
+    */
+   @Input() loadingItem!: string;
+```
+
+## How to Import It
+
+<Steps>
+
+1. Import the component into your TypeScript file:
+
+   ```ts
+   import { SkeletonLoaderComponent } from "@atl-transit/shared";
+   ```
+
+2. Add your component into the import property of your component
+
+   ```ts
+   @Component({
+     selector: "my-component",
+     standalone: true,
+     imports: [SkeletonLoaderComponent],
+   })
+   export class MyComponent {}
+   ```
+
+3. Use the component in your template:
+
+   ```html
+   <shared-skeleton-loader />
+   ```
+
+</Steps>
